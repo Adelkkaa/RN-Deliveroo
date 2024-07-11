@@ -67,7 +67,11 @@ export const HeaderBottomSheet = forwardRef<Ref>((_, ref) => {
           Arrival time
         </Text>
         <SelectLink title="Now" icon="stopwatch-outline" />
-        <Button onPress={() => dismiss()} text="Confirm" />
+        <Button
+          style={styles.button}
+          onPress={() => dismiss()}
+          text="Confirm"
+        />
       </View>
     </BottomSheetModal>
   );
@@ -103,6 +107,9 @@ const styles = StyleSheet.create({
 
   subheader: {
     fontSize: 16,
+    margin: 16,
+  },
+  button: {
     margin: 16,
   },
 });

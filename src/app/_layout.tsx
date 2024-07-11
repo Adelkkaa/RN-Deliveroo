@@ -7,6 +7,8 @@ import React, { useEffect } from "react";
 import { View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { HeaderBackButton } from "@/entities/HeaderBackButton";
+import { Colors } from "@/shared/constants/Colors";
 import { Header } from "@/widgets/Header";
 
 export { ErrorBoundary } from "expo-router";
@@ -41,6 +43,18 @@ const InitialLayout = () => {
         name="index"
         options={{
           header: () => <Header />,
+        }}
+      />
+      <Stack.Screen
+        name="(modal)/filters"
+        options={{
+          presentation: "modal",
+          headerTitle: "Filter",
+          headerShadowVisible: false,
+          headerStyle: {
+            backgroundColor: Colors.lightGrey,
+          },
+          headerLeft: () => <HeaderBackButton />,
         }}
       />
     </Stack>

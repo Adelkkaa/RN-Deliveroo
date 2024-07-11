@@ -10,7 +10,7 @@ export const HeaderSearchBar = () => {
     <View style={styles.searchContainer}>
       <View style={styles.searchSection}>
         <HeaderSearchInput placeholder="Restaurants, groceries, dishes" />
-        <Link href="/(modal)/filter" asChild>
+        <Link href="/(modal)/filters" asChild>
           <TouchableOpacity style={styles.optionButton}>
             <Ionicons name="options-outline" size={20} color={Colors.primary} />
           </TouchableOpacity>
