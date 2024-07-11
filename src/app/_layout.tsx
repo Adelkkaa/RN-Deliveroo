@@ -37,7 +37,12 @@ const InitialLayout = () => {
   }
   return (
     <Stack>
-      <Stack.Screen name="index" options={{ header: () => <Header /> }} />
+      <Stack.Screen
+        name="index"
+        options={{
+          header: () => <Header />,
+        }}
+      />
     </Stack>
   );
 };

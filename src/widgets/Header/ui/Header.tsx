@@ -1,5 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
+import { StatusBar } from "expo-status-bar";
 import React, { useRef } from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -15,9 +16,9 @@ export const Header = () => {
     bottomSheetRef.current?.present();
   };
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView edges={["top"]}>
+      <StatusBar style="dark" />
       <HeaderBottomSheet ref={bottomSheetRef} />
-
       <View style={styles.topContainer}>
         <TouchableOpacity>
           <Image
@@ -36,10 +37,6 @@ export const Header = () => {
 };
 
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: Colors.white,
-  },
   topContainer: {
     height: 60,
     backgroundColor: Colors.white,
