@@ -57,6 +57,14 @@ const InitialLayout = () => {
           headerLeft: () => <HeaderBackButton />,
         }}
       />
+      <Stack.Screen
+        name="(modal)/location-search"
+        options={{
+          presentation: "fullScreenModal",
+          headerTitle: "Select location",
+          headerLeft: () => <HeaderBackButton />,
+        }}
+      />
     </Stack>
   );
 };
