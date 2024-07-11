@@ -1,12 +1,20 @@
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import React, { FC } from "react";
+import {
+  StyleSheet,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
+} from "react-native";
 import { Colors } from "@/shared/constants/Colors";
 import { Text } from "@/shared/ui";
 
-export const HeaderSelect = () => {
+export const HeaderSelect: FC<TouchableOpacityProps> = ({
+  style,
+  ...props
+}) => {
   return (
-    <TouchableOpacity style={styles.titleContainer}>
+    <TouchableOpacity style={[styles.titleContainer, style]} {...props}>
       <Text style={styles.title}>Delivery · Now</Text>
       <View style={styles.locationName}>
         <Text variant="Bold" style={styles.subtitle}>

@@ -1,9 +1,11 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import React, { useEffect } from "react";
 import { View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Header } from "@/widgets/Header";
 
@@ -42,9 +44,13 @@ const InitialLayout = () => {
 
 const RootLayout = () => {
   return (
-    <SafeAreaProvider>
-      <InitialLayout />
-    </SafeAreaProvider>
+    <GestureHandlerRootView>
+      <BottomSheetModalProvider>
+        <SafeAreaProvider>
+          <InitialLayout />
+        </SafeAreaProvider>
+      </BottomSheetModalProvider>
+    </GestureHandlerRootView>
   );
 };
 

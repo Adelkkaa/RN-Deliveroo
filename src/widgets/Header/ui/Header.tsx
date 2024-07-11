@@ -1,14 +1,23 @@
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
+import { BottomSheetModal } from "@gorhom/bottom-sheet";
+import React, { useRef } from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { HeaderBottomSheet } from "@/features/HeaderBottomSheet";
 import { HeaderSearchBar } from "@/features/HeaderSearchBar";
 import { HeaderSelect } from "@/features/HeaderSelect";
 import { Colors } from "@/shared/constants/Colors";
 
 export const Header = () => {
+  const bottomSheetRef = useRef<BottomSheetModal>(null);
+
+  const openModal = () => {
+    bottomSheetRef.current?.present();
+  };
   return (
     <SafeAreaView style={styles.safeArea}>
+      <HeaderBottomSheet ref={bottomSheetRef} />
+
       <View style={styles.topContainer}>
         <TouchableOpacity>
           <Image
@@ -16,7 +25,7 @@ export const Header = () => {
             source={require("@/shared/assets/images/bike.png")}
           />
         </TouchableOpacity>
-        <HeaderSelect />
+        <HeaderSelect onPress={openModal} />
         <TouchableOpacity style={styles.profileButton}>
           <Ionicons name="person-outline" size={20} color={Colors.primary} />
         </TouchableOpacity>
