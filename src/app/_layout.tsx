@@ -65,6 +65,15 @@ const InitialLayout = () => {
           headerLeft: () => <HeaderBackButton />,
         }}
       />
+      <Stack.Screen
+        name="(modal)/dish"
+        options={{
+          presentation: "modal",
+          headerTitle: "",
+          headerTransparent: true,
+          headerLeft: () => <HeaderBackButton />,
+        }}
+      />
     </Stack>
   );
 };
