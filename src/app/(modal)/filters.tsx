@@ -8,7 +8,7 @@ import Animated, {
 } from "react-native-reanimated";
 import categories from "@/shared/assets/data/filter.json";
 import { Colors } from "@/shared/constants/Colors";
-import { Button, Text } from "@/shared/ui";
+import { Button } from "@/shared/ui";
 import { FilterList } from "@/widgets/FilterList";
 import { ICategory } from "@/widgets/FilterList/model/types";
 
