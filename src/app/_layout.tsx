@@ -74,6 +74,13 @@ const InitialLayout = () => {
           headerLeft: () => <HeaderBackButton />,
         }}
       />
+      <Stack.Screen
+        name="basket"
+        options={{
+          headerTitle: "Basket",
+          headerLeft: () => <HeaderBackButton />,
+        }}
+      />
     </Stack>
   );
 };

@@ -4,19 +4,19 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import Animated, { FadeIn, FadeInLeft } from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useBasketStore } from "@/entities/Basket";
 import { getDishById } from "@/shared/assets/data/restaurant";
 import { Colors } from "@/shared/constants/Colors";
 import { Text } from "@/shared/ui";
-// import useBasketStore from "@/store/basketStore";
 
 const Dish = () => {
   const { id } = useLocalSearchParams();
   const item = getDishById(Number(id))!;
   const router = useRouter();
-  // const { addProduct } = useBasketStore();
+  const { addProduct } = useBasketStore();
 
   const addToCart = () => {
-    // addProduct(item);
+    addProduct(item);
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     router.back();
   };

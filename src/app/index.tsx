@@ -25,8 +25,8 @@ const MainScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.lightGrey,
     flex: 1,
+    backgroundColor: Colors.lightGrey,
   },
   wrapper: { paddingBottom: 40 },
   header: {

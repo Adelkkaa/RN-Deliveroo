@@ -6,6 +6,7 @@ import { restaurant } from "@/shared/assets/data/restaurant";
 import { Colors } from "@/shared/constants/Colors";
 import ParallaxScrollView from "@/shared/lib/ParallaxScrollView";
 import { Text } from "@/shared/ui";
+import { DetailsFooter } from "@/widgets/DetailsFooter";
 import { detailsHeaderOptions } from "@/widgets/DetailsHeader";
 import { DetailsMainContent } from "@/widgets/DetailsMainContent";
 import { DetailsStickyNavigation } from "@/widgets/DetailsStickyNavigation";
@@ -52,22 +53,8 @@ const Details = () => {
         <DetailsMainContent {...restaurant} />
       </ParallaxScrollView>
 
-      {/* Sticky segments */}
       <DetailsStickyNavigation food={restaurant.food} opacity={opacity} />
-      {/* Footer Basket */}
-      {/* {items > 0 && (
-        <View style={styles.footer}>
-          <SafeAreaView edges={["bottom"]} style={{ backgroundColor:Colors.white }}>
-            <Link href="/basket" asChild>
-              <TouchableOpacity style={styles.fullButton}>
-                <Text variant="Bold" style={styles.basket}>{items}</Text>
-                <Text variant="Bold" style={styles.footerText}>View Basket</Text>
-                <Text variant="Bold" style={styles.basketTotal}>${total}</Text>
-              </TouchableOpacity>
-            </Link>
-          </SafeAreaView>
-        </View>
-      )} */}
+      <DetailsFooter />
     </>
   );
 };
